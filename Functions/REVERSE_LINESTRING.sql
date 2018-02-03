@@ -1,10 +1,11 @@
 CREATE OR REPLACE FUNCTION dz_lrs.reverse_linestring(
-    IN  pGeometry          geometry
-) RETURNS geometry 
+   IN  pGeometry          GEOMETRY
+) RETURNS GEOMETRY
+IMMUTABLE
 AS
 $BODY$ 
 DECLARE
-   sdo_lrs_output    geometry;
+   sdo_lrs_output    GEOMETRY;
    
 BEGIN
 
@@ -57,10 +58,10 @@ $BODY$
 LANGUAGE plpgsql;
 
 ALTER FUNCTION dz_lrs.reverse_linestring(
-    geometry
+   geometry
 ) OWNER TO dz_lrs;
 
 GRANT EXECUTE ON FUNCTION dz_lrs.reverse_linestring(
-    geometry
+   geometry
 ) TO PUBLIC;
 

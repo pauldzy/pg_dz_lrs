@@ -1,15 +1,16 @@
 CREATE OR REPLACE FUNCTION dz_lrs.overlay_measures(
-    IN  pGeometry1           geometry
-   ,IN  pGeometry2           geometry
-) RETURNS geometry 
+    IN  pGeometry1           GEOMETRY
+   ,IN  pGeometry2           GEOMETRY
+) RETURNS GEOMETRY
+IMMUTABLE
 AS
 $BODY$ 
 DECLARE
-   sdo_input_start   geometry;
-   sdo_input_end     geometry;
+   sdo_input_start   GEOMETRY;
+   sdo_input_end     GEOMETRY;
    num_start_meas    NUMERIC;
    num_end_meas      NUMERIC;
-   sdo_lrs_output    geometry;
+   sdo_lrs_output    GEOMETRY;
    
 BEGIN
 

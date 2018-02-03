@@ -1,8 +1,9 @@
 CREATE OR REPLACE FUNCTION dz_lrs.clip_geom_segment(
-    IN  pGeometry          geometry
+    IN  pGeometry          GEOMETRY
    ,IN  pStartMeasure      NUMERIC
    ,IN  pEndMeasure        NUMERIC
-) RETURNS geometry
+) RETURNS GEOMETRY
+IMMUTABLE
 AS
 $BODY$ 
 DECLARE

@@ -1,14 +1,15 @@
 CREATE OR REPLACE FUNCTION dz_lrs.safe_concatenate_geom_segments(
-    IN  pGeometry1           geometry
-   ,IN  pGeometry2           geometry
-) RETURNS geometry 
+    IN  pGeometry1           GEOMETRY
+   ,IN  pGeometry2           GEOMETRY
+) RETURNS GEOMETRY
+IMMUTABLE
 AS
 $BODY$ 
 DECLARE
-   sdo_array_in      geometry[];
-   sdo_array_in2     geometry[];
-   sdo_concatenate   geometry;
-   sdo_output        geometry;
+   sdo_array_in      GEOMETRY[];
+   sdo_array_in2     GEOMETRY[];
+   sdo_concatenate   GEOMETRY;
+   sdo_output        GEOMETRY;
    num_remove1       NUMERIC;
    num_remove2       NUMERIC;
    int_counter       INTEGER;

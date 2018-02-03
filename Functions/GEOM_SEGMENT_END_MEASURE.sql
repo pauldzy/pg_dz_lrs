@@ -1,6 +1,7 @@
 CREATE OR REPLACE FUNCTION dz_lrs.geom_segment_end_measure(
     IN  pGeometry          GEOMETRY
 ) RETURNS NUMERIC
+IMMUTABLE
 AS
 $BODY$ 
 DECLARE

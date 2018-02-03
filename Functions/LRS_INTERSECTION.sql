@@ -1,13 +1,14 @@
 CREATE OR REPLACE FUNCTION dz_lrs.lrs_intersection(
-    IN  pGeometry1           geometry
-   ,IN  pGeometry2           geometry
-) RETURNS geometry 
+    IN  pGeometry1           GEOMETRY
+   ,IN  pGeometry2           GEOMETRY
+) RETURNS GEOMETRY
+IMMUTABLE
 AS
 $BODY$ 
 DECLARE
-   sdo_intersection geometry;
-   sdo_initial      geometry;
-   sdo_newinter     geometry;
+   sdo_intersection GEOMETRY;
+   sdo_initial      GEOMETRY;
+   sdo_newinter     GEOMETRY;
    
 BEGIN
 

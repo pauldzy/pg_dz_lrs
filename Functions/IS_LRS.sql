@@ -1,6 +1,7 @@
 CREATE OR REPLACE FUNCTION dz_lrs.is_lrs(
-    IN  pGeometry          geometry
+    IN  pGeometry          GEOMETRY
 ) RETURNS BOOLEAN
+IMMUTABLE
 AS
 $BODY$ 
 DECLARE
